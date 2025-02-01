@@ -1,0 +1,70 @@
+
+
+#home-page
+{
+    width: 100%;
+    height: 800px;
+    max-width: 100vw;
+}
+
+#home-page .divider-section
+{
+    display: flex;
+    height: 100%;
+}
+
+
+#home-page .divider-section section
+{
+    text-align: center;
+    padding: 50px;
+    padding-top: 200px;
+    position: relative;
+    width: 50% !important;
+    box-sizing: border-box;
+}
+
+#home-page .socials-container
+{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+.divider-section section h1, p
+{
+    text-align: center;
+}
+
+#home-page .divider-section section:first-child
+{
+    background-color: gray;
+}
+
+#home-page .divider-section section:last-child
+{
+    padding-top: 500px;
+}
+
+
+#home-page h1
+{
+    font-size: 4rem;
+    margin: 5px;
+    margin-top: 25px;
+}
+
+#home-page h2
+{
+    font-size: 2.5rem;
+}
+
+/* About me */
+
+#about-me
+{
+    text-align: center;
+    margin-top: 70px;
+    height: 600px;
+}

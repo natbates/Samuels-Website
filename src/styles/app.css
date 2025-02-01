@@ -1,0 +1,64 @@
+:root
+{
+    --primary-colour: #239ac9;
+    --secondary-colour: #000000;
+    --background-colour: rgb(0, 0, 0);
+    --text-colour: #ffffffd2;
+}
+
+body
+{
+    font-family: metro;
+    color: var(--text-colour);
+    background-color: var(--background-colour);
+    margin: 0;
+}
+
+@font-face {
+    font-family: metro;
+    src: url("/public/fonts/Metropolis-Regular.otf");
+}
+
+#page-holder
+{
+}
+
+.background-image
+{
+    background-image: url("/public/images/dark-cardboard.png");
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -100;
+}
+
+button
+{
+    background-color: #53535386;
+    border: none;
+    color: var(--text-colour);
+    padding: 15px 27px;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover
+{
+    transform: scale(1.05);
+}
+
+.socials-container
+{
+    display: flex;
+    gap: 10px;
+}
+
+.socials-container img
+{
+    width: 20px;
+    height: 20px;
+}
