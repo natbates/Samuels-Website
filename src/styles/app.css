@@ -1,9 +1,15 @@
 :root
 {
-    --primary-colour: #239ac9;
-    --secondary-colour: #000000;
+    --primary-colour: #ffffff;
+    --secondary-colour: #e25809;
     --background-colour: rgb(0, 0, 0);
     --text-colour: #ffffffd2;
+}
+
+html
+{
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
 body
@@ -12,15 +18,14 @@ body
     color: var(--text-colour);
     background-color: var(--background-colour);
     margin: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 @font-face {
     font-family: metro;
     src: url("/public/fonts/Metropolis-Regular.otf");
-}
-
-#page-holder
-{
 }
 
 .background-image
@@ -49,6 +54,7 @@ button
 button:hover
 {
     transform: scale(1.05);
+    color: var(--secondary-colour);
 }
 
 .socials-container
@@ -61,4 +67,20 @@ button:hover
 {
     width: 20px;
     height: 20px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.socials-container img:hover
+{
+    transform: scale(1.05);
+}
+
+.home-section
+{
+    text-align: center;
+    margin-top: 70px;
+    height: 600px;
+    padding: 120px;
+    position: relative;
 }

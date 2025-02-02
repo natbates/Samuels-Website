@@ -4,10 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: fit-content;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
+    position:fixed;
+    z-index: 1000;
+    width: 100vw;
+    top: 0;
+    height: 40px;
+    min-height: 40px;
+    max-width: 100vw;
 }
 
 .logo-container
@@ -25,11 +28,25 @@
     margin-right: 5px !important;
 }
 
+.nav-bar-container{
+    position: absolute;
+    display: flex;
+    right: 70px;
+    margin-top: 2px;
+    transform-origin: right;
+}
+
 #top-nav-bar img
 {
     width: 20px;
     height: 20px;
     margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+#top-nav-bar img:hover
+{
+    transform: rotate(90deg);
 }
 
 #top-nav-bar h1
@@ -39,7 +56,44 @@
     font-weight: 100;
 }
 
+.nav-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-menu {
+    position: absolute;
+    top: -8;
+    right: 40;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.dropdown-arrow.rotated {
+    transform: rotate(90deg);
+}
+
+.nav-menu ul {
+    padding: 10px 20px;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
 #top-nav-bar ul:hover
 {
-    color: #ce4a15;
+    color: var(--secondary-colour);
 }
