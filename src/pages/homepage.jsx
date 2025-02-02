@@ -4,12 +4,12 @@ import Socials from "../components/Socials";
 import "../styles/homepage.css";
 
 
-const TravelLine = () =>
-{
+const TravelLine = ({ top }) => { 
     return (
-        <div className="line-container">
-            <svg>
-                <path d="M0,0 C150,100, 350,200, 500,100 C650,0, 850,150, 1000,100" />
+        <div className="line-container" style={{top: top}}>
+            <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="none">
+                <path d="M0,0 C150,100, 350,200, 500,100 C650,0, 850,150, 1000,100" 
+                      stroke="black" fill="transparent" strokeWidth="2" />
             </svg>
         </div>
     );
@@ -27,12 +27,17 @@ const HomePage = () =>
                     <Socials />
                 </section>
                 <section>
-                    <p>My work at Shuttleworth</p>
-                    <button>See Shuttleworth</button>
+                    <div className="shuttleworth-container">
+                        <img src = "svgs/shuttleworth.svg"></img>
+                        <div className="text-container">
+                            <p>A journey of my work at Shuttleworth</p>
+                            <button onClick={() => window.open("https://www.shuttleworth.org/", "_blank")}>
+                                See Shuttleworth
+                            </button>
+                        </div>
+                    </div>
                 </section>
             </div>
-
-            <TravelLine />
 
             <div id = "home-images" className="home-section">
                 <h1>Catch me on the runway...</h1>
@@ -45,6 +50,9 @@ const HomePage = () =>
 
             <div id = "about-me" className="home-section"> 
                 <h1>What I do</h1>
+                <div>
+                    <h2>Painting and Plane</h2>
+                </div>
             </div>
 
             <div id = "air-shows" className="home-section"> 

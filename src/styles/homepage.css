@@ -11,6 +11,7 @@
 {
     display: flex;
     height: 100%;
+    position: relative;
 }
 
 
@@ -37,6 +38,11 @@
     text-align: center;
 }
 
+.divider-section section h1
+{
+    color: var(--secondary-colour);
+}
+
 #home-page .divider-section section:first-child
 {
     background-image: url("/public/images/sam/IMG_0478.jpeg");
@@ -46,12 +52,29 @@
 }
 
 #home-page .divider-section section:last-child {
-    padding-top: 500px;
+    height: 600px;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, black 100%), 
                       url("/public/images/sam/IMG_7755.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.shuttleworth-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.shuttleworth-container img
+{
+    max-width: 800px;
+    width: 75%;
+    height: 100px;
+    min-width: 300px;
 }
 
 
@@ -110,9 +133,7 @@
 {
     width: 30px;
     height: 30px;
-    background-color: rgba(255, 255, 255, 0.13);
     padding: 10px;
-    border-radius: 50%;
 }
 
 #interact-buttons .left
@@ -174,6 +195,9 @@
 .line-container {
     width: 100%;
     height: fit-content;
+    margin-top: 40px;
+    position: absolute;
+    left: 0;
 }
 
 .line-container svg {
@@ -188,6 +212,7 @@ path {
     stroke-dasharray: 10, 10; /* Creates the dashed effect */
 }
 
+
 @media (max-width: 1000px) {
     #home-page .divider-section{
         flex-direction: column;
@@ -197,15 +222,42 @@ path {
     }
     #home-page .divider-section section:first-child
     {
-        padding-top: 100px;
-        
+        padding-top: 100px;    
+        transform: scale(1.2);    
     }
     #home-page .divider-section section:last-child
     {
         box-shadow: 0px -31px 50px rgba(27, 27, 27, 0.836);
+        animation: flyUp 1s ease-out;
+        padding-bottom: 140px;
     }
     #home-page .socials-container
     {
-        bottom: -50px;
+        
+        bottom: -150px;
+        z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Nav bar changes */
+
+    #top-nav-bar img
+    {
+        margin-right: 10px;
+        transform: scale(1.3);
+        transform-origin: top right;
+    }
+
+}
+
+@keyframes flyUp {
+    0%
+    {
+        transform: translateY(30px);
+    }
+    100%
+    {
+        transform: translateY(0);
     }
 }
