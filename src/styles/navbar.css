@@ -29,13 +29,14 @@
     display: flex;
     align-items: center;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 0px;
+    animation: logo-enter 1.7s ease-out;
 }
 
 #top-nav-bar .logo
 {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px !important;
 }
 
@@ -264,6 +265,7 @@
       margin-top: calc(var(--space) * var(--line-height));
     }
   }
+  
   
   .main-navigation-toggle:checked {
     ~ label .icon--menu-toggle {    

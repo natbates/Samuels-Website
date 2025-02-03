@@ -63,15 +63,23 @@ button:hover
     gap: 10px;
 }
 
-.socials-container img
-{
+.socials-container a {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
     transform-origin: center;
+    display: flex; /* Ensure the anchor tag behaves as a flex container */
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
 }
 
-.socials-container img:hover
+.socials-container a img {
+    width: 100%; /* Ensure the image takes the full width of the anchor tag */
+    height: 100%; /* Ensure the image takes the full height of the anchor tag */
+    margin: 0;
+    min-width: 20px !important;
+}
+.socials-container a:hover
 {
     transform: scale(1.05);
 }
@@ -79,8 +87,14 @@ button:hover
 .home-section
 {
     text-align: center;
-    margin-top: 70px;
     height: 600px;
     padding: 120px;
     position: relative;
+    padding-top: 20px;
+}
+
+.home-section h1
+{
+    text-wrap: nowrap;
+    font-size: 5vw !important;
 }

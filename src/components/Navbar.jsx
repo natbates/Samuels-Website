@@ -54,15 +54,29 @@ const Navbar = () => {
                 <div id = "mobile-nav-bar">
                     <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
                     <label htmlFor="page-nav-toggle">
-                    <img
+                    {!mobileNav ? 
+                        <img
                             className="icon--menu-toggle"
                             src="svgs/burger.svg" 
                             alt="Open menu"
                             width="40"
                             height="40"
-                        />
+                            onClick={() => {setMobileNav(true)}}
+                    />
+                    :
+                        <img
+                            className="icon--menu-toggle"
+                            src="svgs/cross.svg" 
+                            alt="Open menu"
+                            width="40"
+                            height="40"
+                            onClick={() => {setMobileNav(false)}}
+                        >
+                        </img>
+                    }
                     </label>
                     <nav class="main-navigation">
+                        
                         <ul>
                             <li><a>Home</a></li>
                             <li><a>Home</a></li>

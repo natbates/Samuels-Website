@@ -1,6 +1,8 @@
 import "../styles/app.css";
 import Navbar from "./Navbar";
 import HomePage from "../pages/homepage";
+import Footer from "./Footer";
+
 
 const App = () => {
     return (
@@ -9,6 +11,7 @@ const App = () => {
             <div id = "page-content">
                 <HomePage />
             </div>
+            <Footer />
         </div>
     );
 };
