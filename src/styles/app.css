@@ -6,6 +6,12 @@
     --text-colour: #ffffffd2;
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
 html
 {
     width: 100%;
@@ -97,4 +103,5 @@ button:hover
 {
     text-wrap: nowrap;
     font-size: 5vw !important;
+    color: white;
 }

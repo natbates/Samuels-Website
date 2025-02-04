@@ -37,22 +37,49 @@ const AnimatedText = ({ textContent, Tag = 'h1', interval = 101 }) => {
     return <Tag id="animated-text">{text}</Tag>;
 };
 
-
-
-const ImageSlider = ({ images }) => {
-    const [current, setCurrent] = useState(0);
-
-    const nextImage = () => setCurrent((prev) => (prev + 1) % images.length);
-    const prevImage = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+const AboutMeSection = () => {
+    const sections = [
+        {
+            title: "Assisting in Airshows",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            image: "images/services/air-shows.jpg"
+        },
+        {
+            title: "Engineering Excellence",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            image: "images/services/wtf.jpg"
+        },
+        {
+            title: "Historically Accurate Paintwork",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            image: "images/services/paint.jpg"
+        }
+    ];
 
     return (
-        <div id="home-images" className="home-section">
-            <h1>Catch me on the runway...</h1>
-            <img src={images[current]} alt="Runway moment" />
-            <div id="interact-buttons">
-                <img src="svgs/down-arrow.svg" className="left" onClick={prevImage} />
-                <img src="svgs/down-arrow.svg" className="right" onClick={nextImage} />
-            </div>
+        <div id="about-me" className="home-section">
+            <Title text = {"What I can do"} />
+            {sections.map((section, index) => (
+                <div key={index} className={`about-section ${index % 2 === 0 ? 'left' : 'right'}`}>
+                    <img className="section-image" src={section.image} alt={section.title} />
+                    <div className="section-text">
+                        <h2>{section.title}</h2>
+                        <p>{section.description}</p>
+                    </div>
+                </div>
+            ))}
+            <div className="bottom-curve"></div>
+        </div>
+    );
+};
+
+
+const Title = ({text}) => {
+    return (
+        <div className="heading-container">
+            <img src="/svgs/star.svg" alt="Star" className="star-icon" />
+            <AnimatedText textContent={text} tag = "h1" interval={"100"}/>
+            <img src="/svgs/star.svg" alt="Star" className="star-icon" />
         </div>
     );
 };
@@ -69,9 +96,9 @@ const HomePage = () => {
             <div className="intro-section">
                 <section>
                     <div className="shuttleworth-container">
-                        <AnimatedText textContent="SAMUEL WEST" Tag="h1" interval={101} />
+                        <AnimatedText textContent="SAMUEL WEST" Tag="h1" interval={100} />
                         <div className="text-container">
-                            <AnimatedText textContent={"A journey of my work at Shuttleworth"} Tag="p" interval={51} />
+                            <AnimatedText textContent={"A journey of my work at Shuttleworth"} Tag="p" interval={31} />
                             <button onClick={() => window.open("https://www.shuttleworth.org/", "_blank")}>
                                 See Shuttleworth
                             </button>
@@ -86,20 +113,17 @@ const HomePage = () => {
 
             <TravelLine />
 
-            <ImageSlider images={images} />
-
-            <div id="about-me" className="home-section">
-                <h1>What I do</h1>
-                <div>
-                    <h2>Painting and Planes</h2>
-                </div>
+            <div id="home-images" className="home-section">
             </div>
 
+            <AboutMeSection />
+            
             <div id="air-shows" className="home-section">
-                <h1>Airshows</h1>
+                <Title text={"Airshows"} />
             </div>
 
             <div id="location" className="home-section">
+                <div className="top-curve"></div>
                 <h1>Where I do it</h1>
                 <MapComponent />
                 <div className="map-location">
@@ -110,6 +134,8 @@ const HomePage = () => {
                     <p>SG18 9DT</p>
                 </div>
             </div>
+
+            <TravelLine />
 
             <div id="contact-home-page">
                 <Contact />

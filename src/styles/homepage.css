@@ -18,6 +18,20 @@
     box-sizing: border-box;
 }
 
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    padding-bottom: 50px;
+}
+
+.star-icon {
+    width: 20px;  
+    height: 20px;
+    margin-top: 25px;
+}
+
 .home-socials-container
 {
     position: relative;
@@ -37,6 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .intro-section .text-container
@@ -64,25 +79,30 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    min-height: 1em; /* Ensures the height fits the character height */
-    line-height: 1; /* Ensures the line height doesn't add extra space */
+    min-height: 1em;
+    line-height: 1; 
 }
 
 .intro-section section p
 {
-    min-height: 1em; /* Ensures the height fits the character height */
-    line-height: 1; /* Ensures the line height doesn't add extra space */
+    font-size: clamp(1vw, 2vw, 20px); 
+    line-height: 1; 
 }
 
 #home-page .intro-section section {
     height: 600px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, black 100%), 
-                      url("/public/images/sam/IMG_7755.jpeg");
+    background-image: 
+        radial-gradient(circle at left bottom, black 10%, rgba(0, 0, 0, 0) 30%),
+        radial-gradient(circle at right bottom, black 10%, rgba(0, 0, 0, 0) 30%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, black 98%), 
+        url("/public/images/sam/IMG_7755.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 200px;
 }
+
+
 
 .shuttleworth-container
 {
@@ -109,11 +129,6 @@
     margin-top: 25px;
 }
 
-#home-page .home-section h1
-{
-    border-bottom: 2px #313131d0 solid;
-    padding-bottom: 50px;
-}
 
 #home-page h2
 {
@@ -126,18 +141,6 @@
 #home-images
 {
     overflow: hidden;
-}
-
-#home-images h1
-{
-    font-size: 3rem;
-    margin-bottom: 50px;
-}
-
-#home-images img
-{
-    width: auto;
-    height: 100%;
 }
 
 #interact-buttons
@@ -175,7 +178,82 @@
 
 #about-me
 {
+    height: fit-content;
+    padding-bottom: 20px !important;
+}
 
+#about-me .bottom-curve
+{
+    position: absolute;
+    bottom: -100;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    clip-path: ellipse(60% 100% at 50% 0%);
+    z-index: 100;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.about-section.left {
+    flex-direction: row;
+    text-align: start;
+}
+
+.about-section.left p{
+    text-align: start !important;
+}
+
+.about-section.right {
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.about-section.right p
+{
+    text-align: end;
+}
+
+.section-image {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.section-text {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.section-text h2 {
+    font-size: 3vw !important;
+    margin-bottom: 10px;
+}
+
+.section-text p {
+    font-size: 1.5vw;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+#about-me .heading-container{
+    justify-content: flex-start !important;
+}
+
+#about-me .section-image
+{
+    width: 60%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 /* Location */
@@ -183,6 +261,20 @@
 #location
 {
     height: 1000px;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+#location .top-curve
+{
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    clip-path: ellipse(60% 100% at 50% 0%);
+    z-index: 100;
 }
 
 .map
@@ -215,12 +307,24 @@
     color: white;
 }
 
+
+/* Air Shows */
+
+#air-shows {
+    padding-top: 150px;
+    position: relative;
+    background-image: url('/public/images/sam/IMG_0478.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Key property for parallax effect */
+}
+
+
 /* Dashed Line */
 
 .line-container {
     width: 100%;
     height: fit-content;
-    margin-top: 40px;
     position: relative;
     left: 0;
 }

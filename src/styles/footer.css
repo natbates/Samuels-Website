@@ -1,14 +1,17 @@
 .footer {
-    background-color: #1a202c;
+    background-color: rgb(41, 41, 41);
     color: white;
     padding: 1.5rem 0;
     text-align: center;
     margin-top: 2.5rem;
 }
 
-.container {
+.footer .container {
+    display: flex;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    margin: 0px 50px;
 }
 
 .text {

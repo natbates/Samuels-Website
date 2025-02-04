@@ -12,8 +12,18 @@ const Navbar = () => {
         setNavBarState(false);
       } else {
         setIsMobile(false);
+        setMobileNav(false);
       }
     };
+
+    useEffect(() => {
+        if (mobileNav) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    }, [mobileNav, isMobile]);
+    
   
     useEffect(() => {
       checkWidth();
