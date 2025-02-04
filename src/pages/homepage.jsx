@@ -4,8 +4,8 @@ import MapComponent from "../components/Map";
 import Socials from "../components/Socials";
 import "../styles/homepage.css";
 
-const TravelLine = () => (
-    <div className="line-container">
+const TravelLine = ({ mirrored }) => (
+    <div className={`line-container ${mirrored ? "mirrored" : ""}`}>
         <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="none">
             <path 
                 d="M0,0 C150,100, 350,200, 500,100 C650,0, 850,150, 1000,100" 
@@ -14,6 +14,7 @@ const TravelLine = () => (
         </svg>
     </div>
 );
+
 
 const AnimatedText = ({ textContent, Tag = 'h1', interval = 101 }) => {
     const [text, setText] = useState('');
@@ -73,6 +74,66 @@ const AboutMeSection = () => {
     );
 };
 
+const imageSets = {
+    plane1: [
+      { src: "images/home/1.jpg", description: "Description of Plane 1A" },
+      { src: "images/home/2.jpg", description: "Description of Plane 1B" },
+      { src: "images/home/3.jpg", description: "Description of Plane 1C" },
+      { src: "images/home/4.jpeg", description: "Description of Plane 1D" },
+    ],
+    plane2: [
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 2A" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 2B" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 2C" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 2D" },
+    ],
+    plane3: [
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 3A" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 3B" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 3C" },
+      { src: "https://via.placeholder.com/300", description: "Description of Plane 3D" },
+    ],
+};
+  
+
+const ImageGallery = () => {
+    const [selectedSet, setSelectedSet] = useState("plane1");
+  
+    return (
+      <div id="home-images" className="gallery-container">
+        <div className="logo-image-container">
+            <img id = "shuttle-worth-logo" src="svgs/shuttleworth.svg" alt="Shuttleworth" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+        <div className="button-title-container"> 
+          <div className="button-group">
+            {Object.keys(imageSets).map((set) => (
+              <button 
+                key={set} 
+                onClick={() => setSelectedSet(set)}
+                className={selectedSet === set ? "active" : ""} // Add active class
+              >
+                {set.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <h1>{selectedSet}</h1>
+        </div>
+  
+        <div className="image-grid">
+          {imageSets[selectedSet].map((img, index) => (
+            <div key={index} className="image-card">
+              <img src={img.src} alt={img.title} />
+              <p>{img.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+  
+  
 
 const Title = ({text}) => {
     return (
@@ -83,6 +144,9 @@ const Title = ({text}) => {
         </div>
     );
 };
+
+
+
 
 const HomePage = () => {
     const images = [
@@ -108,13 +172,13 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <img src="svgs/shuttleworth.svg" alt="Shuttleworth" />
             </div>
 
             <TravelLine />
 
-            <div id="home-images" className="home-section">
-            </div>
+            <ImageGallery />
+
+            <TravelLine mirrored={true}/>
 
             <AboutMeSection />
             

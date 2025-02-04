@@ -86,7 +86,9 @@ input, textarea {
     height: 40px;
     color: white;
     text-align: start;
+    border-radius: 0 !important;
 }
+
 
 form button
 {
@@ -96,6 +98,28 @@ form button
 @media (max-width: 900px) {
     #contact-container{
         flex-direction: column;
+    }
+    #contact-container > *
+    {
+        width: 100%;
+    }
+    form {
+        border-right: none;
+    }
+    .container-text
+    {
+        display: none;
+    }
+    textarea
+    {
+        height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    #contact-container{
+        flex-direction: column;
+        padding: 10px;
     }
     #contact-container > *
     {
