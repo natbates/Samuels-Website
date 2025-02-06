@@ -70,8 +70,8 @@ button:hover
 }
 
 .socials-container a {
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
     transition: transform 0.3s ease;
     transform-origin: center;
     display: flex; /* Ensure the anchor tag behaves as a flex container */

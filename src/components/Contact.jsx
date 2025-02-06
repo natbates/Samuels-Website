@@ -21,7 +21,7 @@ const Contact = () => {
                 <div className="container-text">
                     <h4>Let's talk about everything.</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-                    <a href="#">Read more</a>
+                    <a className = "read-more" href="#">Read more</a>
                 </div>
             </div>
         </div>

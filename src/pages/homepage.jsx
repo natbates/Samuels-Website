@@ -42,70 +42,77 @@ const AboutMeSection = () => {
     const sections = [
         {
             title: "Assisting in Airshows",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             image: "images/services/air-shows.jpg"
         },
         {
             title: "Engineering Excellence",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             image: "images/services/wtf.jpg"
         },
         {
-            title: "Historically Accurate Paintwork",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            title: "Historical Paintwork",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             image: "images/services/paint.jpg"
         }
     ];
 
     return (
         <div id="about-me" className="home-section">
-            <Title text = {"What I can do"} />
-            {sections.map((section, index) => (
-                <div key={index} className={`about-section ${index % 2 === 0 ? 'left' : 'right'}`}>
-                    <img className="section-image" src={section.image} alt={section.title} />
-                    <div className="section-text">
-                        <h2>{section.title}</h2>
-                        <p>{section.description}</p>
+            <h1 className="fancy"><span>Skills</span></h1>
+            <div className="cards-container">
+                {sections.map((section, index) => (
+                    <div key={index} className="card">
+                        <img className="card-image" src={section.image} alt={section.title} />
+                        <div className="card-text">
+                            <h2>{section.title}</h2>
+                            <p>{section.description}</p>
+                            <a className="read-more">Learn more</a>
+                        </div>
                     </div>
-                </div>
-            ))}
-            <div className="bottom-curve"></div>
+                ))}
+            </div>
+            <img className = "about-plane" src = "svgs/plane-background.svg"></img>
+            <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     );
 };
 
 const imageSets = {
-    plane1: [
-      { src: "images/home/1.jpg", description: "Description of Plane 1A" },
-      { src: "images/home/2.jpg", description: "Description of Plane 1B" },
-      { src: "images/home/3.jpg", description: "Description of Plane 1C" },
-      { src: "images/home/4.jpeg", description: "Description of Plane 1D" },
+    Comet: [
+      { src: "images/planes/comet/1.jpeg", description: "Description of Plane 1A" },
+      { src: "images/planes/comet/2.jpeg", description: "Description of Plane 1B" },
+      { src: "images/planes/comet/3.jpeg", description: "Description of Plane 1C" },
+      { src: "images/planes/comet/4.jpeg", description: "Description of Plane 1D" },
     ],
-    plane2: [
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 2A" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 2B" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 2C" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 2D" },
+    Hurricane: [
+      { src: "images/planes/hurricane/1.jpeg", description: "Description of Plane 2A" },
+      { src: "images/planes/hurricane/2.jpeg", description: "Description of Plane 2B" },
+      { src: "images/planes/hurricane/3.jpeg", description: "Description of Plane 2C" },
+      { src: "images/planes/hurricane/4.jpeg", description: "Description of Plane 2D" },
     ],
-    plane3: [
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 3A" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 3B" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 3C" },
-      { src: "https://via.placeholder.com/300", description: "Description of Plane 3D" },
+    se5a: [
+      { src: "images/planes/se5a/1.jpeg", description: "Description of Plane 3A" },
+      { src: "images/planes/se5a/2.jpeg", description: "Description of Plane 3B" },
+      { src: "images/planes/se5a/3.jpeg", description: "Description of Plane 3C" },
+      { src: "images/planes/se5a/4.jpeg", description: "Description of Plane 3D" },
     ],
 };
   
 
 const ImageGallery = () => {
-    const [selectedSet, setSelectedSet] = useState("plane1");
+    const [selectedSet, setSelectedSet] = useState("Comet");
   
     return (
       <div id="home-images" className="gallery-container">
-        <div className="logo-image-container">
-            <img id = "shuttle-worth-logo" src="svgs/shuttleworth.svg" alt="Shuttleworth" />
+
+        <div className = "about-shuttleworth">
+            <div className="logo-image-container">
+                <img id = "shuttle-worth-logo" src="svgs/shuttleworth.svg" alt="Shuttleworth" />
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  
+
         <div className="button-title-container"> 
           <div className="button-group">
             {Object.keys(imageSets).map((set) => (
@@ -118,7 +125,10 @@ const ImageGallery = () => {
               </button>
             ))}
           </div>
-          <h1>{selectedSet}</h1>
+          <span> 
+            <img src="/svgs/star.svg" alt="Star" className="star-icon" />
+            <h1>{selectedSet}</h1>
+          </span>
         </div>
   
         <div className="image-grid">
@@ -126,26 +136,44 @@ const ImageGallery = () => {
             <div key={index} className="image-card">
               <img src={img.src} alt={img.title} />
               <p>{img.description}</p>
+              <a href = "" target = "_blank" className="read-more">See more</a> {/* Send to gallary*/}
             </div>
           ))}
         </div>
+        <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     );
   };
   
-  
 
-const Title = ({text}) => {
+const videos = [
+    { id: 1, title: "Shuttleworth Race Day", description: "Pr Mk11", src: "images/videos/airshow-1.mp4", link: "https://youtube.com/shorts/VX235w9rB2g?si=vs0c6doVzpogPDki"},
+    { id: 2, title: "Duxford Airshow", description: "Lysander", src: "images/videos/airshow-2.mp4", link: "https://www.youtube.com/shorts/gc0VHbvDU5k?si=tt50RooXuPyGNrBb"},
+    { id: 3, title: "US Airforce D Day Memorials", description: "C47 Skytrain", src: "images/videos/airshow-3.mp4", link: "https://www.youtube.com/shorts/jSePI_-QajU?si=OlYXIcSqFJv_iqFT"},
+    { id: 4, title: "Shuttleworth Festival of Flight", description: "Vought F4U Corsair", src: "images/videos/airshow-4.mp4", link: "https://youtu.be/nEXcwLzqd-o?si=47N2q1KZYMhvKv0I"}
+];
+
+const AirShows = () => {
     return (
-        <div className="heading-container">
-            <img src="/svgs/star.svg" alt="Star" className="star-icon" />
-            <AnimatedText textContent={text} tag = "h1" interval={"100"}/>
-            <img src="/svgs/star.svg" alt="Star" className="star-icon" />
+        <div id="air-shows" className="home-section">
+            <h1 className="fancy"><span>Air Shows</span></h1>
+            <div className="video-container">
+                {videos.map((video) => (
+                    <div key={video.id} className="video-item">
+                        <video autoPlay muted loop>
+                            <source src={video.src} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <h2>{video.title}</h2>
+                        <p>{video.description}</p>
+                        <a href = {video.link} target = "_blank" className="read-more">See the video</a>
+                    </div>
+                ))}
+            </div>
+            <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     );
 };
-
-
 
 
 const HomePage = () => {
@@ -166,29 +194,20 @@ const HomePage = () => {
                             <button onClick={() => window.open("https://www.shuttleworth.org/", "_blank")}>
                                 See Shuttleworth
                             </button>
-                            <div className="home-socials-container">
-                                <Socials />
-                            </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <TravelLine />
 
             <ImageGallery />
 
-            <TravelLine mirrored={true}/>
-
             <AboutMeSection />
             
-            <div id="air-shows" className="home-section">
-                <Title text={"Airshows"} />
-            </div>
+            <AirShows />
 
             <div id="location" className="home-section">
-                <div className="top-curve"></div>
-                <h1>Where I do it</h1>
+                <h1 className="fancy"><span>Location</span></h1>
                 <MapComponent />
                 <div className="map-location">
                     <p>Shuttleworth</p>
@@ -197,13 +216,13 @@ const HomePage = () => {
                     <p>Bedfordshire</p>
                     <p>SG18 9DT</p>
                 </div>
+                <img className = "location-plane" src = "svgs/plane-2.svg"></img>
             </div>
-
-            <TravelLine />
 
             <div id="contact-home-page">
                 <Contact />
             </div>
+            
         </div>
     );
 };

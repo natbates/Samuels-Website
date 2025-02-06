@@ -52,10 +52,9 @@ const Navbar = () => {
                 
                 <div className={`nav-menu ${navBarState ? "show" : ""}`}>
                     <ul>Home</ul>
-                    <ul>About</ul>
-                    <ul>Services</ul>
+                    <ul>Planes</ul>
+                    <ul>Gallery</ul>
                     <ul>Contact</ul>
-                    <ul>Blog</ul>
                 </div>
             </div>
             }
