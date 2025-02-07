@@ -1,10 +1,12 @@
 import "../styles/navbar.css";
 import { useState, useEffect } from "react";
+import { Link, useLocation} from "react-router-dom"; // Import Link for routing
 
 const Navbar = () => {
     const [navBarState, setNavBarState] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [mobileNav, setMobileNav] = useState(false);
+    const location = useLocation();
 
     const checkWidth = () => {
       if (window.innerWidth < 1000) {
@@ -33,31 +35,44 @@ const Navbar = () => {
       };
     }, []);
 
+    const handleHomeClick = () => {
+        if (location.pathname === '/') {
+            // Scroll to the top if we're on the home page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            // Redirect to the home page if we're on any other page
+            window.location.href = '/';
+        }
+    };
+
     return (
         <div id="top-nav-bar">
-            <div className="logo-container">
+            <div className="logo-container" onClick={handleHomeClick}>
                 <img src="svgs/plane.svg" className="logo" />
             </div>
 
-            {!isMobile && 
-                <div 
-                    className="dropdown"
-                    onMouseEnter={() => setNavBarState(true)} 
-                    onMouseLeave={() => setNavBarState(false)}
-                >    
-                <img 
-                    src="svgs/down-arrow.svg" 
-                    className={`dropdown-arrow ${navBarState ? "rotated" : ""}`} 
-                />
-                
+            {!isMobile && (
                 <div className={`nav-menu ${navBarState ? "show" : ""}`}>
-                    <ul>Home</ul>
-                    <ul>Planes</ul>
-                    <ul>Gallery</ul>
-                    <ul>Contact</ul>
+                    <div className="nav-item" title="Go to Home Section">
+                        <Link to="/" onClick={handleHomeClick}>
+                            Home
+                        </Link>
+                    </div>
+
+                    <div className="nav-item" title="Go to Planes">
+                        <Link to="/planes">Planes</Link>
+                    </div>
+                    <div className="nav-item" title="Go to Gallery">
+                        <Link to="/gallery">Gallery</Link>
+                    </div>
+                    <div className="nav-item" title="Go to Contact Section">
+                        <Link to="/contact">
+                            Contact
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            }
+            )}
+
 
             {isMobile && 
                 <div id = "mobile-nav-bar">
@@ -88,8 +103,9 @@ const Navbar = () => {
                         
                         <ul>
                             <li><a>Home</a></li>
-                            <li><a>Home</a></li>
-                            <li><a>Home</a></li>
+                            <li><a>Planes</a></li>
+                            <li><a>Gallery</a></li>
+                            <li><a>Contact</a></li>
                         </ul>
                     </nav>
                 </div>

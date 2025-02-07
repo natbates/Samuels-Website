@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    color: white;
 }
 
 .fancy::before,
@@ -34,14 +35,69 @@
     color: var(--secondary-colour);
     cursor: pointer;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 
 #home-page
 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 7vw, 100px);
     width: 100%;
-    height: fit-content;
     max-width: 100vw;
+    padding: 20px;
+    padding-top: clamp(40px, 11vw, 150px);
+    box-sizing: border-box;
+}
+
+.home-section
+{
+    text-align: start;
+    padding: 40px;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: min(1000px, 100%);
+    background-color: rgb(7, 7, 7);
+    margin: 0px auto;
+    border: 1px solid rgba(82, 82, 82, 0.295);
+}
+
+@keyframes home-section-fly-in-left {
+
+    0%
+    {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes home-section-fly-in-right {
+
+    0%
+    {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.home-section h2
+{
+    color: white;
+    margin-top: 0;
+    font-size: 2.7rem;
+    opacity: 1 !important;
 }
 
 
@@ -83,58 +139,85 @@
     margin-top: 30px;
 }
 
-.intro-section
-{
+#intro-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;      
+    padding-right: 10px;
+    opacity: 0;
 }
 
-.intro-section section
+#intro-section.animate
 {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    animation: home-section-fly-in-left 0.6s ease forwards;
 }
 
-.intro-section .text-container
+
+#intro-section .text-container
 {
+    width:fit-content;
+    text-align: start;
+}
+
+#intro-section img
+{
+    position: absolute;
+    right: 20;
+    bottom: 40;
+    height: auto;
+}
+
+.text-logo-container
+{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
     width: 100%;
 }
 
-.intro-section img
+@media (max-width: 860px) {
+
+    #shuttle-worth-logo
+    {
+        display: none;
+    }
+}
+
+#shuttle-worth-logo
 {
+    bottom: 20;
+    right: 20;
     position: relative;
-    width: 60%;
-    height: auto;
-    margin-top: 100px;
-    max-height: 70px;
+    width: 500px;
+    margin: auto 0;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
-
-
-.intro-section section h1, p
-{
-    text-align: center;
-}
-
-.intro-section section h1 {
+#intro-section h1 {
     color: rgb(255, 255, 255);
-    font-size: clamp(32px, 9.5vw, 130px) !important; 
-    white-space: nowrap;
+    font-size: clamp(3rem, 10vw, 5rem); 
     overflow: hidden;
-    display: inline-block;
     min-height: 1em;
     line-height: 1; 
+    text-align: start;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: fit-content;
 }
 
-.intro-section section p
+.intro-section p
 {
     font-size: clamp(12px, 2vw, 20px); 
     line-height: 1; 
 }
 
-#home-page .intro-section section {
-    height: fit-content;
+#home-page .top-background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 600px;
+    width: 100%;
     background-image: 
         radial-gradient(circle at left bottom, black 10%, rgba(0, 0, 0, 0) 20%),
         radial-gradient(circle at right bottom, black 10%, rgba(0, 0, 0, 0) 20%),
@@ -143,32 +226,132 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 200px;
 }
 
 
-#home-page h1
+
+/* Information */
+
+#information-text {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+#information-text.animate
 {
-    font-size: 4rem;
-    margin: 5px;
-    margin-top: 25px;
+    animation: home-section-fly-in-right 0.6s ease forwards;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.info-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 30px;
+    text-align: left;
+}
+
+@media (max-width: 970px) {
+    .info-columns
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .info-section .socials-container
+    {
+        display: none;
+    }
+}
+
+.info-section h3 {
+    color: var(--text-colour);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.7;
 }
 
 
-#home-page h2
+
+/* Shuttle Worth */
+
+#about-shuttleworth
 {
-    font-size: 2.5rem;
+    display: flex;
+    max-width: 1000px;
+    box-sizing: border-box;
+    gap: 20px;
+    opacity: 0;
 }
 
-
-/* Images */
-
-#home-images
+#about-shuttleworth.animate
 {
-    position: relative;
-    height: fit-content;
-    padding: 0px 40px;
-    margin-top: 120px;
+    animation: home-section-fly-in-right 0.6s ease forwards;
+}
+
+#about-shuttleworth .about-text
+{
+    margin: 0;
+}
+
+.shuttleworth-stats-container
+{
+    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 40px;
+}
+
+.shuttleworth-stats-container .stats-container .stats-text
+{
+    text-align: end;
+}
+
+.shuttleworth-stats-container .stats-container img
+{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.shuttleworth-stats-container .stats-container
+{
+    width: fit-content;
+    text-align: start;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.shuttleworth-stats-container .stats-container h3
+{
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 0;
+    text-align: start;
+}
+
+.shuttleworth-stats-container .stats-container p
+{
+    margin-bottom: 0;
+    text-wrap: nowrap;
+    text-align: start;
 }
 
 .logo-image-container
@@ -179,19 +362,57 @@
     margin-bottom: 50px;
 }
 
-#shuttle-worth-logo
+
+@media (max-width: 1000px) {
+    #about-shuttleworth
+    {
+        flex-direction: column;
+    }
+    .shuttleworth-stats-container
+    {
+        gap: 80px;
+        margin-top: 70px;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+    .shuttleworth-stats-container .stats-container
+    {
+        margin-left: 0;
+    }
+    .shuttleworth-stats-container .stats-container div
+    {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 708px) 
 {
-    bottom: 70;
-    width: 100%;
-    max-height: 100px;
-    margin: 0;
-    max-width: 400px;
+    .shuttleworth-stats-container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* Images */
+
+#home-images
+{
+    position: relative;
+    height: fit-content;
+    opacity: 0;
+}
+
+#home-images.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
 }
 
 #home-images p
 {
-    margin-top: 120px;
-    margin-bottom: clamp(50px, 6vw, 130px);
+    margin-top: 50px;
     font-size: clamp(17px, 2vw, 20px);
 }
 
@@ -201,16 +422,22 @@
 }
 
 .gallery-container {
+    box-sizing: border-box;
     text-align: start;
-    margin: 10px auto;
     max-width: 1000px;
-    margin-bottom: 50px;
-  }
+}
+
+
+
+.gallery-container .button-title-container h1
+{
+    font-size: 2rem !important;
+}
 
   .button-title-container
   {
     min-width: 397px;
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -248,21 +475,15 @@
     }
   }
 
-  @media (max-width: 450px) {
-    
-    #home-images
-    {
-        padding: 0px 20px;
-    }
+  @media (max-width: 750px) {
+
+
     .image-grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
         grid-gap: 20px;
     }
-    .image-card p
-    {
-        text-align: center !important;
-    }
+
     .button-title-container
     {
         min-width: 0px !important;
@@ -307,7 +528,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
+
+
 
 .image-card {
     text-align: start;
@@ -325,7 +550,7 @@
 }
 
 .image-card img {
-    filter: grayscale(0.8);
+    filter: grayscale(0.65);
     width: 100%;
     background-color: rgb(41, 41, 41);
     aspect-ratio: 2 / 3; /* Maintains a 2:3 width-to-height ratio */
@@ -343,13 +568,15 @@
 #about-me
 {
     height: fit-content;
-    padding: 0 40px;
     padding-bottom: 20px !important;
     max-width: 1000px;
-    margin: 50px auto;
-    margin-top: 160px !important;
-    padding-top: 0 !important;
-    
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+#about-me.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
 }
 
 #about-me .bottom-curve{
@@ -366,9 +593,10 @@
 
 .about-text
 {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-size: clamp(18px, 2.5vw, 20px) !important; 
+    font-size: 1.2rem !important; 
+    text-align: start;
+    margin-top: 50px;
+    opacity: 0.7;
 }
 
 #about-me .about-plane
@@ -394,7 +622,6 @@
     max-width: 1000px;
     margin: 0 auto;
     flex-wrap: wrap;
-    margin-top: 70px;
 }
 
 .card {
@@ -408,6 +635,7 @@
     min-height: 400px;
     object-fit: cover;
     filter: grayscale(0.8);
+    margin-bottom: 20px;
 }
 
 .card-text {
@@ -416,14 +644,14 @@
 }
 
 .card-text h2 {
-    font-size: 1.5em;
+    font-size: 1.5em !important;
     margin-bottom: 5px;
 }
 
 .card-text p {
     text-align: start;
     font-size: 1em;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 
@@ -437,7 +665,13 @@
     
     #about-me
     {
-        padding: 50px;
+        padding: 40px;
+    }
+
+    #about-me .about-plane
+    {
+        width: 90%;
+        margin-top: 16px;
     }
 }
 
@@ -451,20 +685,26 @@
     {
         width: 100%;
     }
+    .card-text h2 {
+        font-size: 2.5em !important;
+        margin-bottom: 26px;
+    }
+    .card-image
+    {
+        max-height: 445px;
+    }
 }
 
 /* Location */
 
 #location
 {
-    height: fit-content;
-    padding-bottom: 0px;
-    position: relative;
-    max-width: 1000px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    opacity: 0;
+}
+
+#location.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
 }
 
 .location-plane
@@ -480,67 +720,101 @@
     box-sizing: border-box;
     margin: auto;
     margin-top: 50px;
+    z-index: 2;
 }
 
 .map-location
 {
     background-color: var(--background-colour);
     position: absolute;
-    top: 170;
-    left: 150;
+    top: 200;
+    right: 120;
     color: var(--text-colour);
-    z-index: 1000;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    text-align: start;
+    text-align: center;
     padding: 20px;
+    width: fit-content;
 }
 
-.map-location h1
+.map-location h2
 {
     font-size: 1.4rem !important;
     margin: 5px;
     margin-top: 5px !important;
     color: white;
+    margin-bottom: 10px;
+}
+
+.map-location p
+{
+    font-size: 0.8rem;
 }
 
 /* Air Shows */
 
 #air-shows {
-    padding-top: 30px;
     position: relative;
     height: fit-content;
-    margin: 50px auto;
     max-width: 1000px;
-    padding-bottom: 0;
+    box-sizing: border-box;
+    text-align: start;
+    opacity: 0;
+}
+
+#air-shows.animate
+{
+    animation: home-section-fly-in-right 0.6s ease forwards;
 }
 
 #air-shows .video-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 40px;
-    justify-items: center; 
+    justify-content: space-between;
     align-items: center; 
-    margin-bottom: 150px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Prevents overflow */
 }
 
 .video-item {
-    aspect-ratio: 16 / 9; 
     width: 100%; 
-    background-color: black;
+    max-width: 500px; /* Optional: Limit max size */
+    aspect-ratio: 7 / 15; 
+    position: relative; /* Ensures child elements are positioned properly */
+    overflow: hidden; /* Ensures videos don't break out */
+    display: flex; /* Helps maintain sizing */
+    align-items: start; /* Centers video vertically */
+    justify-content: center; /* Centers video horizontally */
+    flex-direction: column;
+    
 }
 
-
-.video-item video
-{
-    border: 2px white solid;
+.video-item video {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures uniformity in sizing */
     filter: grayscale(0.6);
-    min-height: 855px;
-    object-fit: cover;
     transition: filter 0.3s ease;
+    margin-bottom: 30px;
 }
+
+.video-item .video-text{
+    white-space: nowrap;  /* Prevents wrapping */
+    text-overflow: ellipsis;  /* Adds "..." if the text is too long */
+}
+
+
+.video-item .video-text h2 {
+    font-size: 2.08rem !important; /* Large text for titles */
+}
+
+.video-item .video-text p {
+    font-size: clamp(17px, 2vw, 20px); 
+}
+
 
 .video-item video:hover
 {
@@ -555,19 +829,55 @@
 .video-item h2
 {
     margin-bottom: 20px;
+    text-wrap: nowrap;
+}
+
+
+@media (max-width: 1120px) {
+
+    
+    #air-shows .video-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Reduce gap size */
+    }
+
+    #air-shows .video-item {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* Let content define height */
+        aspect-ratio: unset; /* Remove aspect ratio constraint */
+    }
+
+    #air-shows .video-item video {
+        width: 100%;
+        height: auto; /* Adjusts to natural height */
+        max-height: 600px;
+    }
 }
 
 
 /* Dashed Line */
 
 .line-container {
-    width: 100%;
-    height: clamp(100px, 30vw, 400px);
-    position: relative;
-    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    max-width: calc(100vw - 22px);
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -250px);
     overflow-x: auto; /* Prevents content from wrapping */
     white-space: nowrap; /* Keeps inline elements in one line */
     flex-shrink: 0;
+    z-index: -100;
+    opacity: 0;
+}
+
+.line-container.animate
+{
+    animation: fade-in 0.6s ease-in forwards;
 }
 
 .line-container svg {
@@ -575,16 +885,29 @@
     height: 100%;
 }
 
-.line-container.mirrored {
-    transform: scaleX(-1); /* Flips the entire SVG horizontally */
-}
 
 path {
     stroke: var(--text-colour);
-    opacity: 1;
+    opacity: 0.4;
     stroke-width: 2;
     fill: none;
     stroke-dasharray: 10, 10; /* Creates the dashed effect */
+}
+
+
+@keyframes fade-in{
+
+    0%
+    {
+        opacity: 0;
+    }
+    60%
+    {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 

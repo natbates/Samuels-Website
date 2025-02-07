@@ -4,6 +4,16 @@
     max-width: 1000px;
 }
 
+#contact-home-page
+{
+    opacity: 0;
+}
+
+#contact-home-page.animate
+{
+    animation: home-section-fly-in-right 0.6s ease forwards; 
+}
+
 #contact-container
 {
     display: flex;
@@ -90,6 +100,9 @@ form button
 @media (max-width: 900px) {
     #contact-container{
         flex-direction: column;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0;
     }
     #contact-container > *
     {
