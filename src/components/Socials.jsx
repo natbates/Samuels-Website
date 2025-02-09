@@ -2,7 +2,7 @@ const Socials = () => {
     return (
         <div className="socials-container">
             {/* Facebook Link */}
-            <a href="https://www.instagram.com/sam.__.west?igsh=MTM0aGtucjRmNnhqZw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/share/15FSF4sYrt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                 <img src="./svgs/socials/facebook.svg" alt="Facebook" />
             </a>
 

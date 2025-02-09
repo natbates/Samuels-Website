@@ -5,22 +5,23 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Im
 
 import HomePage from "../pages/homepage";
 import Gallery from "../pages/gallery";
-import ContactPage from "../pages/contact";
-import Planes from "../pages/planes";
+import ContactPage from "../pages/contactpage";
+import Login from "../pages/login";
 
 const App = () => {
     return (
         <Router> {/* Wrapping the app with Router */}
             <div id="page-holder">
+                <div className="top-background-image"></div>
                 <Navbar />
-                <div id="page-content">
+                <main id="page-content">
                     <Routes> {/* Replaced Switch with Routes */}
                         <Route exact path="/" element={<HomePage />} /> {/* Home page */}
                         <Route path="/gallery" element={<Gallery />} /> {/* Gallery page */}
-                        <Route path="/planes" element={<Planes />} /> {/* Gallery page */}
                         <Route path = "/contact" element={<ContactPage />}></Route>
+                        <Route path = "/login" element={<Login />}></Route>
                     </Routes>
-                </div>
+                </main>
                 <Footer />
             </div>
         </Router>

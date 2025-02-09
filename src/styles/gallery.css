@@ -1,0 +1,124 @@
+
+#gallery-section
+{
+    margin-top: 50px;
+    animation: home-section-fly-in-left 0.6s ease forwards;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+
+#gallery-section .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Image container */
+#gallery-section .image-item {
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+#gallery-section .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#gallery-section .pagination
+{
+    position: absolute;
+    top: 40;
+    right: 40;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#gallery-section .pagination.bottom
+{
+    top:auto;
+    bottom: 40;
+}
+
+#gallery-section .pagination button
+{
+    padding: 10;
+    margin: 0;
+}
+
+#gallery-section .pagination button:disabled
+{
+    opacity: 0.6;
+}
+
+#gallery-section .pagination button img
+{
+    width: 15px;
+    height: 15px;
+}
+
+#gallery-section .pagination button img.left
+{
+    transform: rotate(90deg);
+}
+
+#gallery-section .pagination button img.right
+{
+    transform: rotate(-90deg);
+}
+
+/* Loading spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error message */
+.error-message, .no-images-message {
+    color: var(--secondary-colour);
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    #gallery-section .image-item {
+        width: 100%;
+        height: auto; /* Allow the height to adjust based on the image */
+    }
+    
+    #gallery-section .image-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }    
+}
+
+@media (max-width: 500px) {
+    #gallery-section .pagination span
+    {
+        display: none;
+    }
+}

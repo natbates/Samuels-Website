@@ -37,8 +37,28 @@
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    text-wrap: nowrap;
 }
 
 .link:hover {
     color: var(--secondary-colour);
+}
+
+@media (max-width: 530px) {
+    .footer .container .socials-container
+    {
+        display: none;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .link
+    {
+        font-size: 0.7rem;
+    }
+    .footer .container
+    {
+        justify-content: center;
+    }
 }

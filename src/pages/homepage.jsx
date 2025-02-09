@@ -4,7 +4,7 @@ import MapComponent from "../components/Map";
 import Socials from "../components/Socials";
 import "../styles/homepage.css";
 
-const TravelLine = () => (
+export const TravelLine = () => (
     <div className={`line-container`}>
         <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="none">
             <path 
@@ -15,7 +15,7 @@ const TravelLine = () => (
     </div>
 );
 
-const TravelLine2 = () => (
+export const TravelLine2 = () => (
     <div className="line-container">
         <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="none">
             <path 
@@ -26,7 +26,7 @@ const TravelLine2 = () => (
     </div>
 );
 
-const TravelLine3 = () => (
+export const TravelLine3 = () => (
     <div className="line-container">
         <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="none">
             <path 
@@ -189,7 +189,6 @@ const AboutText = () =>
 {
     return (
         <div id = "about-shuttleworth" className = "home-section">
-            <div></div>
             <div className="about-text-container">
                 <h2>Numbers I'm proud of.</h2>
                 <p  className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis.</p>
@@ -289,6 +288,15 @@ const HomePage = () => {
     ];
 
     useEffect(() => {
+        if (localStorage.getItem("scrollToContact") === "true") {
+            localStorage.removeItem("scrollToContact"); // Clear intent
+            setTimeout(() => {
+                document.getElementById("contact-me")?.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+        }
+    }, []);
+
+    useEffect(() => {
         // Select all elements with the 'home-section' or 'line-container' class
         const elements = document.querySelectorAll('.home-section, .line-container');
     
@@ -302,7 +310,7 @@ const HomePage = () => {
                 }
             });
         }, {
-            threshold: 0.2 // The threshold for triggering the observer (50% of the element in view)
+            threshold: 0.01 // The threshold for triggering the observer (50% of the element in view)
         });
     
         // Observe all the selected elements
@@ -320,10 +328,9 @@ const HomePage = () => {
     
     return (
         <div id="home-page">
-            <div className="top-background-image"></div>
 
             <div id="intro-section" className="home-section">
-                <h1>SAMUEL WEST</h1>
+                <h1>Samuel West</h1>
                 <div className="text-container">
                     <p>A journey of my work at Shuttleworth</p>
                     <button onClick={() => window.open("https://www.shuttleworth.org/", "_blank")}>

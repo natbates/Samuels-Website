@@ -1,0 +1,51 @@
+
+#login-section
+{
+    margin-top: 50px;
+    animation: home-section-fly-in-left 0.6s ease forwards;
+}
+
+#login-section form
+{
+    border: none;
+    padding: 0px;
+    align-items: start;
+}
+
+.button-text-login
+{
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-text-login p
+{
+    text-wrap: nowrap;
+    margin: 0;
+}
+
+.button-text-login button
+{
+    margin: 0;
+}
+
+#login-section form .input-group
+{
+    width: 100%;
+    text-align: start;
+}
+
+#login-section form .input-group input
+{
+    margin-top: 10px;
+}
+
+@media (max-width: 690px) {
+    .button-text-login p
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+
+
+
+.logout-button
+{
+    position: absolute;
+    right: 40;
+    top: 40;
+    margin: 0;
+}
+
+
+#dashboard input
+{
+    border: none;
+}

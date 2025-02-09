@@ -15,7 +15,6 @@ const Footer = () => {
         }
     };
 
-
     return (
         <footer className="footer">
             <div className="container">
@@ -29,9 +28,12 @@ const Footer = () => {
                     <Link to="/gallery" className="link">
                         Gallery
                     </Link>
-                    <a href="#contact-me" className="link" onClick={() => {handleContactClick();}}>
+                    <Link to="/contact" className="link">
                         Contact
-                    </a>
+                    </Link>
+                    <Link to="/login" className="link">
+                        Log in
+                    </Link>
                 </div>
                 <Socials />
             </div>
