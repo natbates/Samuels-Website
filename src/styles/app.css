@@ -73,6 +73,14 @@ body
     font-size: 0.8rem;
 }
 
+.error-message, 
+.no-images-message 
+{
+    color: var(--secondary-colour);
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
 .about-text
 {
     font-size: 1rem;

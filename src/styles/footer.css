@@ -1,6 +1,6 @@
 .footer {
     background-color: rgb(41, 41, 41);
-    color: var(--primary-colour);
+    color: white;
     text-align: center;
     margin-top: 4.5rem;
     background-color: rgb(7, 7, 7);
@@ -34,7 +34,7 @@
 }
 
 .link {
-    color: var(--primary-colour);
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
     text-wrap: nowrap;
@@ -44,11 +44,8 @@
     color: var(--secondary-colour);
 }
 
-@media (max-width: 530px) {
-    .footer .container .socials-container
-    {
-        
-    }
+@media (max-width: 530px) 
+{
     .footer .container
     {
         flex-direction: column;
