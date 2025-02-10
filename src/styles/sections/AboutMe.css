@@ -1,0 +1,50 @@
+/* About Me */
+
+#about-me {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+#about-me.animate
+{
+    animation: home-section-fly-in-right 0.6s ease forwards;
+}
+
+#about-me .info-columns 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 30px;
+    text-align: left;
+}
+
+#about-me .info-columns .info-section h3
+ {
+    color: var(--text-colour);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#about-me .info-columns .info-section p 
+{
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+@media (max-width: 970px) 
+{
+    #about-me .info-columns
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #about-me .info-columns .info-section .socials-container
+    {
+        display: none;
+    }
+}

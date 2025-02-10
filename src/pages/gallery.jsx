@@ -22,16 +22,26 @@ const Gallery = () => {
 
                 const data = await response.json();
 
+                if (Array.isArray(data) && data.length === 0) {
+                    setError("No images found. The repository is empty.");
+                    setLoading(false);
+                    return;
+                }
+
                 // Filter only image files
                 const imageFiles = data
                     .filter(file => file.type === "file" && file.download_url)
                     .map(file => ({
                         name: file.name,
                         url: file.download_url,
-                        sha: file.sha // Unique identifier
+                        sha: file.sha, // Unique identifier
                     }));
 
-                setImages(imageFiles);
+                if (imageFiles.length === 0) {
+                    setError("No images available in the repository.");
+                } else {
+                    setImages(imageFiles);
+                }
             } catch (error) {
                 console.error("Error fetching images:", error);
                 setError("Failed to load images. Please try again later.");
@@ -52,9 +62,17 @@ const Gallery = () => {
 
     return (
         <div className="home-section-container">
-            <div id="gallery-section" className="home-section">
+            <div 
+                id="gallery-section" 
+                className={`home-section ${totalPages > 1 ? "multiple-page" : ""}`}
+            >
                 <h2>Gallery</h2>
-
+                <p className="about-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
                 {loading ? (
                     <div className="loading-spinner"></div>
                 ) : error ? (
@@ -72,38 +90,39 @@ const Gallery = () => {
                         </div>
 
                         {totalPages > 1 && (
-                            <div className="pagination">
-                                <button 
-                                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                                    disabled={currentPage === 1}
-                                >
-                                    <img className = "left" src = "svgs/down-arrow.svg"></img>
-                                </button>
-                                <span>Page {currentPage} of {totalPages}</span>
-                                <button 
-                                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                                    disabled={currentPage === totalPages}
-                                >
-                                    <img className = "right" src = "svgs/down-arrow.svg"></img>
-                                </button>
-                            </div>
-                        )}
-                                                {totalPages > 1 && (
-                            <div className="pagination bottom">
-                                <button 
-                                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                                    disabled={currentPage === 1}
-                                >
-                                    <img className = "left" src = "svgs/down-arrow.svg"></img>
-                                </button>
-                                <span>Page {currentPage} of {totalPages}</span>
-                                <button 
-                                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                                    disabled={currentPage === totalPages}
-                                >
-                                    <img className = "right" src = "svgs/down-arrow.svg"></img>
-                                </button>
-                            </div>
+                            <>
+                                <div className="pagination">
+                                    <button 
+                                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                                        disabled={currentPage === 1}
+                                    >
+                                        <img className="left" src="svgs/down-arrow.svg" alt="Previous page" />
+                                    </button>
+                                    <span>Page {currentPage} of {totalPages}</span>
+                                    <button 
+                                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+                                        disabled={currentPage === totalPages}
+                                    >
+                                        <img className="right" src="svgs/down-arrow.svg" alt="Next page" />
+                                    </button>
+                                </div>
+
+                                <div className="pagination bottom">
+                                    <button 
+                                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                                        disabled={currentPage === 1}
+                                    >
+                                        <img className="left" src="svgs/down-arrow.svg" alt="Previous page" />
+                                    </button>
+                                    <span>Page {currentPage} of {totalPages}</span>
+                                    <button 
+                                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+                                        disabled={currentPage === totalPages}
+                                    >
+                                        <img className="right" src="svgs/down-arrow.svg" alt="Next page" />
+                                    </button>
+                                </div>
+                            </>
                         )}
                     </>
                 )}

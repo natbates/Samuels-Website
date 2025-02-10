@@ -1,0 +1,46 @@
+/* Intro */
+
+#intro-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;      
+    padding-right: 10px;
+    opacity: 0;
+}
+
+#intro-section.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
+}
+
+#intro-section .text-container
+{
+    width:fit-content;
+    text-align: start;
+}
+
+#intro-section img
+{
+    position: absolute;
+    right: 20;
+    bottom: 40;
+    height: auto;
+}
+
+#intro-section h1 {
+    color: rgb(255, 255, 255);
+    font-size: clamp(3rem, 10vw, 5rem); 
+    overflow: hidden;
+    min-height: 1em;
+    line-height: 1; 
+    text-align: start;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.intro-section p
+{
+    font-size: clamp(12px, 2vw, 20px); 
+    line-height: 1; 
+}

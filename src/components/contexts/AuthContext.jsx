@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
     const login = (email, password) => {
-        if (email === process.env.REACT_APP_ADMIN_LOGIN_EMAIL && process.env.REACT_APP_ADMIN_LOGIN_PASSWORD === "password123") {
+        if (email === process.env.REACT_APP_ADMIN_LOGIN_EMAIL && password == process.env.REACT_APP_ADMIN_LOGIN_PASSWORD) {
             setUser({ email });
             return true;
         }

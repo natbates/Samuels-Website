@@ -1,0 +1,83 @@
+/* Skills */
+
+#skills
+{
+    height: fit-content;
+    padding-bottom: 20px !important;
+    max-width: 1000px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+#skills.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
+}
+
+#skills .cards-container 
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#skills .cards-container .card 
+{
+    width: 30%;
+    text-align: center;
+}
+
+#skills .cards-container .card .card-image 
+{
+    width: 100% !important;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+    filter: grayscale(0.8);
+    margin-bottom: 20px;
+    transition: filter 0.3s ease;
+}
+
+#skills .cards-container .card .card-text 
+{
+    margin-top: 10px;
+    text-align: start;
+}
+
+#skills .cards-container .card .card-text h2 
+{
+    font-size: 1.5em !important;
+    margin-bottom: 5px;
+}
+
+#skills .cards-container .card .card-text p 
+{
+    text-align: start;
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+
+#skills .cards-container .card .card-image:hover
+{
+    filter: grayscale(0);
+}
+
+@media (max-width: 970px) {
+    
+    #skills .cards-container
+    {
+        flex-direction: column;
+    }
+    #skills .cards-container .card 
+    {
+        width: 100%;
+    }
+    #skills .cards-container .card .card-image
+    {
+        max-height: 445px;
+    }
+}

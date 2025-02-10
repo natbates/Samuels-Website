@@ -11,7 +11,6 @@
     height: 100vh;
 }
 
-
 html
 {
     width: 100%;
@@ -29,10 +28,10 @@ body
 }
 
 
-#root, #page-holder { /* Ensure React root takes full height */
+#root, #page-holder { 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; 
     overflow: hidden;
 }
 
@@ -60,22 +59,30 @@ body
     background-size: cover;
 }
 
+/* Commonly used text designs */
 
-@font-face {
-    font-family: metro;
-    src: url("/public/fonts/Metropolis-Regular.otf");
-}
-
-.background-image
+.read-more
 {
-    background-image: url("/public/images/dark-cardboard.png");
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -100;
+    display: block;
+    width: 100%;
+    text-align: start;
+    color: var(--secondary-colour);
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 0.8rem;
 }
+
+.about-text
+{
+    font-size: 1rem;
+    text-align: start;
+    margin-top: 30px;
+    opacity: 0.7;
+}
+
+
+/* Button Design */
 
 button
 {
@@ -93,37 +100,6 @@ button:hover
 {
     transform: scale(1.05);
     color: var(--secondary-colour);
-}
-
-.socials-container
-{
-    display: flex;
-    gap: 10px;
-}
-
-.socials-container a {
-    width: 27px;
-    height: 27px;
-    transition: transform 0.3s ease;
-    transform-origin: center;
-    display: flex; /* Ensure the anchor tag behaves as a flex container */
-    align-items: center; /* Vertically center the image */
-    justify-content: center; /* Horizontally center the image */
-}
-
-.socials-container a img {
-    width: 100%; /* Ensure the image takes the full width of the anchor tag */
-    height: 100%; /* Ensure the image takes the full height of the anchor tag */
-    margin: 0;
-    min-width: 20px !important;
-}
-.socials-container a:hover
-{
-    transform: scale(1.05);
-}
-
-.socials-container a:hover img {
-    filter: brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(5351%) hue-rotate(17deg) brightness(101%) contrast(105%);
 }
 
 .button-show-more-container
@@ -149,7 +125,8 @@ button:hover
     height: 2px;
 }
 
-.home-section-container
-{
-    position: relative;
+
+@font-face {
+    font-family: metro;
+    src: url("/public/fonts/Metropolis-Regular.otf");
 }

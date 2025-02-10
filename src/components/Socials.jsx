@@ -1,3 +1,5 @@
+import "../styles/socialContainer.css";
+
 const Socials = () => {
     return (
         <div className="socials-container">

@@ -1,7 +1,19 @@
-#contact-me {
+#contact-me 
+{
     margin: auto;
     text-align: center;
     max-width: 1000px;
+}
+
+#shuttle-worth-logo
+{
+    bottom: 20;
+    right: 20;
+    position: relative;
+    width: 500px;
+    margin: auto 0;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 #contact-section
@@ -9,7 +21,6 @@
     margin-top: 50px;
     animation: home-section-fly-in-left 0.6s ease forwards;
 }
-
 
 #contact-home-page
 {
@@ -53,8 +64,8 @@
     opacity: 0.6;
 }
 
-
-form {
+form 
+{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -66,7 +77,8 @@ form {
 {
     margin: 0;
     margin-bottom: 30px;
-    color: white;
+    color: var(--primary-colour);
+    font-size: 2.5rem;
 }
 
 form
@@ -80,7 +92,8 @@ form
     gap: 20px;
 }
 
-input, textarea {
+input, textarea 
+{
     width: 100%;
     padding: 10px;
     padding-left: 0;
@@ -103,7 +116,8 @@ form button
     width: 150px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) 
+{
     #contact-container{
         flex-direction: column;
         padding-left: 0 !important;
@@ -127,7 +141,8 @@ form button
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) 
+{
     #contact-container{
         flex-direction: column;
         padding: 10px;

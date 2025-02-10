@@ -22,9 +22,6 @@ const Footer = () => {
                     <a href="#" className="link" onClick={handleHomeClick}>
                         Home
                     </a>
-                    <Link to="/planes" className="link">
-                        Planes
-                    </Link>
                     <Link to="/gallery" className="link">
                         Gallery
                     </Link>

@@ -1,0 +1,152 @@
+/* Project Planes */
+
+#project-planes
+{
+    position: relative;
+    height: fit-content;
+    opacity: 0;
+    box-sizing: border-box;
+    text-align: start;
+    max-width: 1000px;
+}
+
+#project-planes.animate
+{
+    animation: home-section-fly-in-left 0.6s ease forwards;
+}
+
+#project-planes .button-title-container span .star-icon {
+    margin: auto 3px;
+    margin-right: 10px;
+    width: clamp(3px, 3vw, 26px);
+    height: auto;
+}
+
+#project-planes .button-title-container span h1
+{
+    font-size: 2rem !important;
+    color: var(--primary-colour);
+    margin: 0 !important;
+}
+
+#project-planes .button-title-container
+{
+    min-width: 397px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#project-planes .button-title-container span
+{
+    display: flex;
+    align-items: center;
+}
+
+#project-planes .button-title-container .button-group
+{
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    min-width: 250px;
+}
+
+#project-planes .button-title-container .button-group button 
+{
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    color: var(--text-colour);
+    border-radius: 0px;
+    background-color: transparent !important;
+    height: fit-content;
+    transition: none;
+}
+
+
+#project-planes .button-title-container .button-group button:active,
+#project-planes .button-title-container .button-group button:focus,
+#project-planes .button-title-container .button-group button.active 
+{ 
+    color: var(--primary-colour);
+    border-bottom: 2px var(--primary-colour) solid;
+}
+  
+#project-planes .button-title-container .button-group button:hover
+{
+    transform: none !important;
+    color: var(--secondary-colour);
+    border-color: var(--secondary-colour);
+}
+
+#project-planes .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#project-planes .image-grid .image-card {
+    text-align: start;
+    width: 100%;
+    height: fit-content;
+}
+
+#project-planes .image-grid .image-card p
+{
+    margin: 20px 0px !important;
+    text-align: start;
+    margin-bottom: 10px !important;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+}
+
+#project-planes .image-grid .image-card img 
+{
+    filter: grayscale(0.65);
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    aspect-ratio: 2 / 3; 
+    object-fit: cover; 
+    transition: filter 0.3s ease;
+}
+  
+#project-planes .image-grid .image-card img:hover
+{
+    filter: grayscale(0);
+}
+
+@media (max-width: 650px) 
+{
+    #project-planes .button-title-container h1
+    {
+        font-size: 1.7rem !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 585px) 
+{
+    #project-planes .button-title-container span
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) 
+{
+    #project-planes .image-grid 
+    {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-gap: 20px;
+    }
+
+    #project-planes .button-title-container
+    {
+        min-width: 0px !important;
+    }
+}

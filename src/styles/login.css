@@ -5,6 +5,14 @@
     animation: home-section-fly-in-left 0.6s ease forwards;
 }
 
+#login-dashboard-page
+{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 7vw, 100px);
+}
+
+
 #login-section form
 {
     border: none;
@@ -43,7 +51,8 @@
     margin-top: 10px;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 690px) 
+{
     .button-text-login p
     {
         display: none;
