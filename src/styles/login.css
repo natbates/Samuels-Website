@@ -12,6 +12,12 @@
     gap: clamp(30px, 7vw, 100px);
 }
 
+#login-section h2
+{
+    font-size: 2.5rem;
+    color: var(--primary-colour);
+    margin-top: 5px;
+}
 
 #login-section form
 {
@@ -49,6 +55,7 @@
 #login-section form .input-group input
 {
     margin-top: 10px;
+    padding-left: 10px;
 }
 
 @media (max-width: 690px) 

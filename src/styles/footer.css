@@ -67,8 +67,23 @@
     {
         font-size: 0.7rem;
     }
+
+    .links
+    {
+        width: 100%;
+        text-align: start;
+        justify-content: start;
+    }
+
     .footer .container
     {
-        justify-content: center;
+        justify-content: start;
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    .footer .container .socials-container
+    {
+        width: 100%;
     }
 }
