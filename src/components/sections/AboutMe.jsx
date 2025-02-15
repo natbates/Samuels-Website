@@ -7,23 +7,24 @@ const AboutMeSection = () => {
             <h2>About Me</h2>
             <div className="info-columns">
                 <div className="info-section">
-                    <h3>My Background</h3>
-                    <p>I have always been passionate about aviation and engineering. My journey started with a deep curiosity for how things work, leading me to pursue a career in aircraft maintenance and design.</p>
+                    <h3>Beginnings</h3>
+                    <p>My story began in the Hangars of The Shuttleworth Collection, IWM Duxford, and Sywell. The vast array of beautifully preserved aircraft captured a part of me I did not know existed. A part of me that now operates along with a team of the worlds finest aircraft engineers. </p>
                     <div className="info-section">
                         <h3>My Location</h3>
-                        <p>I have always been passionate about aviation and engineering. spursue a career in aircraft maintenance and design.</p>
+                        <p>I am based at The Shuttleworth Collection, Old Warden, Bedfordshire. See the interactive map at the bottom of this page for a more detailed view.</p>
                     </div>
-                    <Socials />
+
                 </div>
 
                 <div className="info-section">
                     <h3>My Experience</h3>
-                    <p>With hands-on experience in various aircraft systems, I have worked on different models, ensuring top-notch performance and safety. My training has provided me with both technical knowledge and problem-solving skills.</p>
-                    <p>With hands-on experience in various aircraft systems, ensuring top-notch performance and safety. My training has provided me with both technical knowledge and problem-solving skills.</p>
+                    <p>I have hands on experience in maintenance, restoration, and operating over 20 different types of aircraft and over 15 different types of engines, some of these aircraft include Hawker Sea Hurricanes, Spitfires, Racing aircraft such as the DH88 Comet as well as many other famous historical aircraft.</p>
+                    <p>I have been an active member in the restoration of Hawker Hind G-AENP, Percival Mewgull G-AEXF, and De Havilland Dragon Rapide G-AGSH </p>
                 </div>
                 <div className="info-section">
                     <h3>My Goals</h3>
-                    <p>My aspiration is to become a leading aircraft engineer, contributing to innovations in aviation technology. I strive to continually learn and grow, pushing the boundaries of aircraft performance and efficiency.</p>
+                    <p>My current goal is to complete my 4 year apprenticeship with the Collection and with hard work focus and determination, I will earn my place to continue to work with the worlds finest engineers spearheading the fight to keep historical and vintage aircraft flying. I hope to one day operate as skillfully and professionally as my colleagues.</p>
+                    <Socials />
                 </div>
             </div>
         </div>

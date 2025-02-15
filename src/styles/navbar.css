@@ -84,7 +84,7 @@
 .nav-item a
 {
   text-decoration: none;
-  color: var(--primary-colour);
+  color: white;
   display: block;
 }
 
@@ -154,7 +154,7 @@
     padding: 10px 20px;
     margin: 0;
     list-style: none;
-    var(--primary-colour)-space: nowrap;
+    white-space: nowrap;
     flex-grow: 0;
     cursor: pointer;
     font-size: 1.5rem;
@@ -162,7 +162,7 @@
 
 .nav-menu p a
 {
-  color: var(--primary-colour);
+  color: white;
   text-decoration: none;
 }
 
@@ -211,7 +211,7 @@
     width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
-    var(--primary-colour)-space: nowrap;
+    white-space: nowrap;
     
     + label {
       position: fixed;
@@ -238,7 +238,7 @@
   }
   
   .icon--menu {
-    stroke: var(--primary-colour);
+    stroke: white;
   }
   
   .icon--close {
@@ -382,7 +382,7 @@
   }
 
 #nav-items a {
-    color: var(--var(--primary-colour));
+    color: var(--white);
     text-decoration: none;
     transition: transform 0.3s ease;
     display: flex;              

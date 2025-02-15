@@ -2,18 +2,18 @@ import "../../styles/sections/Skills.css";
 
 const sections = [
     {
-        title: "Assisting in Airshows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Operating live aircraft",
+        description: "My roles in operating aircraft for a show include refuelling, manual handling, hand propping, starting aircraft, steering aircraft, and engineering tasks that pop up amongst so many other tasks",
         image: "images/services/air-shows.jpg"
     },
     {
-        title: "Engineering Excellence",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Maintenance",
+        description: "6 Monthly, Annual, 3 Yearly and 9 Yearly inspections are among the many types of maintenance I will undertake on our aircraft",
         image: "images/services/wtf.jpg"
     },
     {
-        title: "Historical Paintwork",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Historically Accurate Paintwork",
+        description: "Painting aircraft parts and structures is one of my skills I practice regularly. For some of these pieces, historical accuracy is paramount",
         image: "images/services/paint.jpg"
     }
 ];
@@ -30,12 +30,12 @@ const SkillsSection = () => {
                         <div className="card-text">
                             <h2>{section.title}</h2>
                             <p>{section.description}</p>
-                            <a className="read-more">Learn more</a>
+                            <a href = "https://www.shuttleworth.org/explore/the-collection/" target="_blank" className="read-more">Learn more</a>
                         </div>
                     </div>
                 ))}
             </div>
-            <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p className="about-text">These tasks are only a few of the many other tasks I get to undertake during day to day work. If i was to list them all then this page would be so very long! I am incredibly lucky to work with such highly skilled and attentive people that help me learn and improve my skills within the tasks I do.</p>
         </div>
     );
 };

@@ -36,7 +36,6 @@
     height: auto;
     min-height: 400px;
     object-fit: cover;
-    filter: grayscale(0.8);
     margin-bottom: 20px;
     transition: filter 0.3s ease;
 }
@@ -60,11 +59,6 @@
     opacity: 0.9;
 }
 
-
-#skills .cards-container .card .card-image:hover
-{
-    filter: grayscale(0);
-}
 
 @media (max-width: 970px) {
     

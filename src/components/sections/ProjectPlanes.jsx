@@ -3,22 +3,22 @@ import { useState } from "react";
 
 const imageSets = {
     Comet: [
-      { src: "images/planes/comet/1.jpeg", description: "Description of Plane 1A" },
-      { src: "images/planes/comet/2.jpeg", description: "Description of Plane 1B" },
-      { src: "images/planes/comet/3.jpeg", description: "Description of Plane 1C" },
-      { src: "images/planes/comet/4.jpg", description: "Description of Plane 1D" },
+      { src: "images/planes/comet/1.jpeg", description: "DH88 Comet before a display" },
+      { src: "images/planes/comet/2.jpeg", description: "Enjoying some fresh air after maintenance" },
+      { src: "images/planes/comet/3.jpeg", description: "You cant park that there sir" },
+      { src: "images/planes/comet/4.jpg", description: "Refitting the fuel tank cover plate" },
     ],
     Hurricane: [
-      { src: "images/planes/hurricane/1.jpeg", description: "Description of Plane 2A" },
-      { src: "images/planes/hurricane/2.jpeg", description: "Description of Plane 2B" },
-      { src: "images/planes/hurricane/3.jpeg", description: "Description of Plane 2C" },
-      { src: "images/planes/hurricane/4.jpg", description: "Description of Plane 2D" },
+      { src: "images/planes/hurricane/1.jpeg", description: "Just before beginning maintenance" },
+      { src: "images/planes/hurricane/2.jpeg", description: "Catching some shade underneath her wing" },
+      { src: "images/planes/hurricane/3.jpeg", description: "Departing IWM Duxford after a static display" },
+      { src: "images/planes/hurricane/4.jpg", description: "The oddly spacious cockpit" },
     ],
     se5a: [
-      { src: "images/planes/se5a/1.jpeg", description: "Description of Plane 3A" },
-      { src: "images/planes/se5a/2.jpeg", description: "Description of Plane 3B" },
-      { src: "images/planes/se5a/3.jpeg", description: "Description of Plane 3C" },
-      { src: "images/planes/se5a/4.jpeg", description: "Description of Plane 3D" },
+      { src: "images/planes/se5a/1.jpeg", description: "Just before an engine run" },
+      { src: "images/planes/se5a/2.jpeg", description: "A 'quick' oil change" },
+      { src: "images/planes/se5a/3.jpeg", description: "A sunkissed topside" },
+      { src: "images/planes/se5a/4.jpeg", description: "Up Up and away" },
     ],
 };
   
@@ -29,7 +29,7 @@ const ProjectPlanesSection = () => {
 
     return (
       <div id="project-planes" className="home-section">
-        <h2>Project Planes</h2>
+        <h2>Project Aircraft</h2>
         <div className="button-title-container"> 
           <div className="button-group">
             {Object.keys(imageSets).map((set) => (
@@ -68,10 +68,7 @@ const ProjectPlanesSection = () => {
         </div>
 
         <p className="about-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          A little collection of photographs highlighting a few of the regular sights with the collections aircraft
         </p>
       </div>
     );

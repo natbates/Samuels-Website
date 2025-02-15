@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const videos = [
     { id: 1, title: "Shuttleworth Race Day", description: "Pr Mk11", src: "images/videos/airshow-1.mp4", link: "https://youtube.com/shorts/VX235w9rB2g?si=vs0c6doVzpogPDki"},
-    { id: 2, title: "Duxford Airshow", description: "Lysander", src: "images/videos/airshow-2.mp4", link: "https://www.youtube.com/shorts/gc0VHbvDU5k?si=tt50RooXuPyGNrBb"},
-    { id: 3, title: "US Airforce D Day Memorials", description: "C47 Skytrain", src: "images/videos/airshow-3.mp4", link: "https://www.youtube.com/shorts/jSePI_-QajU?si=OlYXIcSqFJv_iqFT"},
-    { id: 4, title: "SW Festival of Flight", description: "Vought F4U Corsair", src: "images/videos/airshow-4.mp4", link: "https://youtu.be/nEXcwLzqd-o?si=47N2q1KZYMhvKv0I"}
+    { id: 2, title: "Duxford Airshow", description: "Lysander departing for Duxford.", src: "images/videos/airshow-2.mp4", link: "https://www.youtube.com/shorts/gc0VHbvDU5k?si=tt50RooXuPyGNrBb"},
+    { id: 3, title: "US Airforce D Day Memorials", description: "C47 Skytrains", src: "images/videos/airshow-3.mp4", link: "https://www.youtube.com/shorts/jSePI_-QajU?si=OlYXIcSqFJv_iqFT"},
+    { id: 4, title: "Festival of Flight", description: "Vought F4U Corsair arrival.", src: "images/videos/airshow-4.mp4", link: "https://youtu.be/nEXcwLzqd-o?si=47N2q1KZYMhvKv0I"}
 ];
 
 const AirShowsSection = () => {
@@ -41,10 +41,7 @@ const AirShowsSection = () => {
             </div>
 
             <p className="about-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                These videos give you a small glimpse into sights that are a common occurence for me on show days. They really are nothing short of breathtaking, and I am extremely fortunate to have such wonderful responsibilities.
             </p>
         </div>
     );
