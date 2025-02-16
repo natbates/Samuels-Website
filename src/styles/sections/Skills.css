@@ -75,3 +75,19 @@
         max-height: 445px;
     }
 }
+
+
+@media (max-width: 450px) {
+
+    .stats-text
+    {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px !important;
+    }
+
+    .stats-text p
+    {
+        margin: 0;
+    }
+}

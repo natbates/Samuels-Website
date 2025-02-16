@@ -17,17 +17,18 @@ const Dashboard = () => {
         fetchImagesFromRepo();
     }, []);
 
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
     // Fetch images from the GitHub repo
     const fetchImagesFromRepo = async () => {
         try {
-            const response = await fetch(GITHUB_API_URL, {
+            const response = await fetch(`${GITHUB_API_URL}?timestamp=${new Date().getTime()}`, {
                 headers: { Authorization: `token ${GITHUB_API_KEY}` },
             });
 
             if (!response.ok) throw new Error("Failed to fetch images.");
 
             const data = await response.json();
-
             console.log("FETCHED", data);
 
             if (Array.isArray(data) && data.length === 0) {
@@ -49,14 +50,13 @@ const Dashboard = () => {
             } else {
                 console.log("ALL IMAGES ", imageFiles);
                 setRepoImages(imageFiles);
+                setError(""); // Clear error if images are successfully loaded
             }
         } catch (error) {
             console.error("Error fetching images:", error);
             setError("Failed to load images. Please try again later.");
         }
     };
-
-    
 
     // Handle file selection
     const handleFileChange = (e) => {
@@ -139,7 +139,9 @@ const Dashboard = () => {
             await Promise.all(uploadPromises);
             alert("Images uploaded successfully!");
             setFiles([]);
-            fetchImagesFromRepo(); // Refresh images list after upload
+
+            await delay(5000); // Wait 5 seconds for GitHub to update
+            fetchImagesFromRepo();
         } catch (err) {
             setError("An error occurred during upload.");
             console.error("Upload error:", err);
@@ -176,7 +178,9 @@ const Dashboard = () => {
                 throw new Error(`Failed to delete ${fileName}. Status: ${response.status}. Response: ${errorText}`);
             }
 
-            fetchImagesFromRepo(); // Refresh images list after delete
+            await delay(5000); // Wait 5 seconds for GitHub to update
+            fetchImagesFromRepo();
+            setError(""); // Clear error after successful delete
         } catch (err) {
             setError("An error occurred during deletion.");
             console.error("Delete error:", err);
@@ -220,7 +224,7 @@ const Dashboard = () => {
                     </div>
                 ))}
             </div>
-            <p>When you add or delete images they will take a while to process with github so they might not pop up straight away - give it about 20s</p>
+            <p>When you add or delete images they will take a while to process with GitHub, so they might not appear immediately - give it about 5-10 seconds.</p>
         </div>
     );
 };
