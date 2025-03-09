@@ -28,6 +28,7 @@
 {
     width: 30%;
     text-align: center;
+    position: relative;
 }
 
 #skills .cards-container .card .card-image 
@@ -38,6 +39,18 @@
     object-fit: cover;
     margin-bottom: 20px;
     transition: filter 0.3s ease;
+}
+
+#skills .cards-container .card .hover-text {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: opacity 0.3s ease-in-out;
 }
 
 #skills .cards-container .card .card-text 
