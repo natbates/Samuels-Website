@@ -35,7 +35,7 @@
 {
     width: 100% !important;
     height: auto;
-    min-height: 400px;
+    height: 400px;
     object-fit: cover;
     margin-bottom: 20px;
     transition: filter 0.3s ease;
@@ -85,7 +85,7 @@
     }
     #skills .cards-container .card .card-image
     {
-        max-height: 445px;
+        height: 550px;
     }
 }
 
